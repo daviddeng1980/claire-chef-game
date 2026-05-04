@@ -20,8 +20,8 @@ class StreetScene extends Phaser.Scene {
         // 创建玩家角色
         this.createPlayer();
         
-        // 创建UI
-        this.createUI();
+        // 创建状态栏
+        this.statusBar = new StatusBar(this, 375, 60);
         
         // 创建导航栏
         this.createNavigation();
@@ -105,7 +105,7 @@ class StreetScene extends Phaser.Scene {
     
     createPlayer() {
         // 玩家角色（初始位置在街道中央）
-        this.player = this.add.image(375, 700, 'player');
+        this.player = this.add.image(375, 700, 'claire');
         this.player.setScale(1.5);
         
         // 玩家名称
@@ -128,43 +128,7 @@ class StreetScene extends Phaser.Scene {
         });
     }
     
-    createUI() {
-        // 顶部状态栏背景
-        const statusBg = this.add.graphics();
-        statusBg.fillStyle(0xFFFFFF, 0.95);
-        statusBg.fillRoundedRect(10, 10, 730, 80, 10);
-        
-        // 金币
-        this.goldText = this.add.text(30, 30, '💰 500', {
-            fontSize: '28px',
-            fontFamily: 'Microsoft YaHei',
-            color: '#333333'
-        });
-        
-        // 体力
-        this.energyText = this.add.text(250, 30, '⚡ 100/100', {
-            fontSize: '28px',
-            fontFamily: 'Microsoft YaHei',
-            color: '#333333'
-        });
-        
-        // 等级
-        this.levelText = this.add.text(480, 30, 'Lv.1 新手厨师', {
-            fontSize: '28px',
-            fontFamily: 'Microsoft YaHei',
-            color: '#333333'
-        });
-        
-        // 经验条背景
-        const expBarBg = this.add.graphics();
-        expBarBg.fillStyle(0xEEEEEE, 1);
-        expBarBg.fillRoundedRect(480, 65, 240, 15, 5);
-        
-        // 经验条
-        this.expBar = this.add.graphics();
-        this.expBar.fillStyle(0xFFD700, 1);
-        this.expBar.fillRoundedRect(480, 65, 0, 15, 5);
-    }
+
     
     createNavigation() {
         const width = this.cameras.main.width;

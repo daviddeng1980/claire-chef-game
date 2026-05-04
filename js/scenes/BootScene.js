@@ -73,62 +73,37 @@ class BootScene extends Phaser.Scene {
     }
     
     loadAssets() {
-        // 这里加载游戏资源
-        // 由于是原型阶段，使用程序化生成的图形代替图片资源
-        
-        // 生成角色纹理
-        this.generateCharacterTexture();
-        
-        // 生成建筑纹理
-        this.generateBuildingTextures();
-        
-        // 生成物品纹理
-        this.generateItemTextures();
-        
-        // 生成UI纹理
-        this.generateUITextures();
-    }
-    
-    generateCharacterTexture() {
-        // 使用 AssetGenerator 生成精美角色
+        // 使用 AssetGenerator 生成精美素材
         const generator = new AssetGenerator(this);
+        
+        // 生成角色
         generator.generateClaire();
-    }
-    
-    generateBuildingTextures() {
-        // 使用 AssetGenerator 生成精美建筑
-        const generator = new AssetGenerator(this);
         
+        // 生成建筑
         const buildings = ['home', 'restaurant', 'barbershop', 'mall', 'cinema', 'cooking_school'];
         buildings.forEach(building => {
             generator.generateBuilding(building);
         });
-    }
-    
-    generateItemTextures() {
-        // 使用 AssetGenerator 生成精美食材
-        const generator = new AssetGenerator(this);
         
+        // 生成食材
         const items = ['tomato', 'carrot', 'egg', 'meat', 'fish'];
         items.forEach(item => {
             generator.generateFoodItem(item);
         });
-    }
-    
-    generateUITextures() {
-        // 使用 AssetGenerator 生成精美UI
-        const generator = new AssetGenerator(this);
         
-        // 按钮纹理
+        // 生成UI
         generator.generateButton(200, 60);
         
-        // 面板纹理
+        // 生成面板纹理
         const panelGraphics = this.make.graphics({ x: 0, y: 0, add: false });
         panelGraphics.fillStyle(0xFFFFFF, 0.95);
         panelGraphics.fillRoundedRect(0, 0, 600, 400, 20);
         panelGraphics.lineStyle(4, 0xFF6B6B, 1);
         panelGraphics.strokeRoundedRect(0, 0, 600, 400, 20);
         panelGraphics.generateTexture('panel', 600, 400);
+        
+        // 生成背景
+        generator.generateBackground('street');
     }
     
     create() {
@@ -156,7 +131,7 @@ class BootScene extends Phaser.Scene {
         }).setOrigin(0.5);
         
         // 继续游戏按钮
-        const continueBtn = this.add.image(width / 2, 900, 'button')
+        const continueBtn = this.add.image(width / 2, 900, 'button_new')
             .setInteractive({ useHandCursor: true });
         
         this.add.text(width / 2, 900, '继续游戏', {
@@ -170,7 +145,7 @@ class BootScene extends Phaser.Scene {
         });
         
         // 新游戏按钮
-        const newGameBtn = this.add.image(width / 2, 1000, 'button')
+        const newGameBtn = this.add.image(width / 2, 1000, 'button_new')
             .setInteractive({ useHandCursor: true });
         
         this.add.text(width / 2, 1000, '新游戏', {
