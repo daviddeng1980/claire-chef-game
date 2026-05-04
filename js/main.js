@@ -39,7 +39,8 @@ function initGame() {
             MiniGameScene,
             WorkScene,
             SkillScene,
-            InventoryScene
+            InventoryScene,
+            CharacterScene
         ]
     };
     

@@ -333,7 +333,7 @@ class StreetScene extends Phaser.Scene {
                 this.showQuests();
                 break;
             case '角色':
-                this.showCharacter();
+                this.scene.start('CharacterScene');
                 break;
             case '设置':
                 this.scene.start(CONSTANTS.SCENES.MENU);
