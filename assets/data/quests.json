@@ -1,0 +1,94 @@
+{
+  "quests": [
+    {
+      "id": "tutorial_1",
+      "name": "初次烹饪",
+      "description": "完成你的第一次烹饪",
+      "type": "cooking",
+      "target": 1,
+      "reward": { "exp": 100, "gold": 50 },
+      "category": "main",
+      "unlockLevel": 1
+    },
+    {
+      "id": "tutorial_2",
+      "name": "第一次打工",
+      "description": "在饭店完成第一次打工",
+      "type": "work",
+      "target": 1,
+      "reward": { "exp": 80, "gold": 40 },
+      "category": "main",
+      "unlockLevel": 1
+    },
+    {
+      "id": "daily_cook_3",
+      "name": "今日厨师",
+      "description": "完成3次烹饪",
+      "type": "cooking",
+      "target": 3,
+      "reward": { "exp": 100, "gold": 50 },
+      "category": "daily",
+      "unlockLevel": 1
+    },
+    {
+      "id": "daily_work_5",
+      "name": "勤劳小蜜蜂",
+      "description": "完成5次打工",
+      "type": "work",
+      "target": 5,
+      "reward": { "exp": 80, "gold": 100 },
+      "category": "daily",
+      "unlockLevel": 1
+    },
+    {
+      "id": "daily_compete_1",
+      "name": "挑战者",
+      "description": "参加1次比赛",
+      "type": "competition",
+      "target": 1,
+      "reward": { "exp": 150, "gold": 80 },
+      "category": "daily",
+      "unlockLevel": 5
+    },
+    {
+      "id": "daily_buy_3",
+      "name": "购物达人",
+      "description": "购买3件物品",
+      "type": "shopping",
+      "target": 3,
+      "reward": { "exp": 60, "gold": 30 },
+      "category": "daily",
+      "unlockLevel": 10
+    },
+    {
+      "id": "achievement_level_10",
+      "name": "初级厨师",
+      "description": "达到10级",
+      "type": "level",
+      "target": 10,
+      "reward": { "exp": 200, "gold": 100 },
+      "category": "achievement",
+      "unlockLevel": 1
+    },
+    {
+      "id": "achievement_cook_50",
+      "name": "烹饪达人",
+      "description": "完成50次烹饪",
+      "type": "cooking",
+      "target": 50,
+      "reward": { "exp": 300, "gold": 200 },
+      "category": "achievement",
+      "unlockLevel": 1
+    },
+    {
+      "id": "achievement_gold_1000",
+      "name": "小富翁",
+      "description": "累计获得1000金币",
+      "type": "gold",
+      "target": 1000,
+      "reward": { "exp": 150, "gold": 50 },
+      "category": "achievement",
+      "unlockLevel": 1
+    }
+  ]
+}

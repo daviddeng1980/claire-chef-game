@@ -1,0 +1,175 @@
+{
+  "items": [
+    {
+      "id": "tomato",
+      "name": "西红柿",
+      "icon": "🍅",
+      "category": "vegetable",
+      "price": 10,
+      "quality": "common",
+      "description": "新鲜的西红柿，酸甜可口"
+    },
+    {
+      "id": "carrot",
+      "name": "胡萝卜",
+      "icon": "🥕",
+      "category": "vegetable",
+      "price": 8,
+      "quality": "common",
+      "description": "营养丰富的胡萝卜"
+    },
+    {
+      "id": "potato",
+      "name": "土豆",
+      "icon": "🥔",
+      "category": "vegetable",
+      "price": 5,
+      "quality": "common",
+      "description": "多用途的土豆"
+    },
+    {
+      "id": "cabbage",
+      "name": "白菜",
+      "icon": "🥬",
+      "category": "vegetable",
+      "price": 6,
+      "quality": "common",
+      "description": "清脆的白菜"
+    },
+    {
+      "id": "egg",
+      "name": "鸡蛋",
+      "icon": "🥚",
+      "category": "meat",
+      "price": 3,
+      "quality": "common",
+      "description": "新鲜的鸡蛋"
+    },
+    {
+      "id": "pork",
+      "name": "猪肉",
+      "icon": "🥩",
+      "category": "meat",
+      "price": 30,
+      "quality": "good",
+      "description": "优质猪肉"
+    },
+    {
+      "id": "beef",
+      "name": "牛肉",
+      "icon": "🥩",
+      "category": "meat",
+      "price": 40,
+      "quality": "good",
+      "description": "鲜嫩牛肉"
+    },
+    {
+      "id": "chicken",
+      "name": "鸡肉",
+      "icon": "🍗",
+      "category": "meat",
+      "price": 25,
+      "quality": "good",
+      "description": "嫩滑鸡肉"
+    },
+    {
+      "id": "fish",
+      "name": "鱼",
+      "icon": "🐟",
+      "category": "seafood",
+      "price": 25,
+      "quality": "good",
+      "description": "新鲜海鱼"
+    },
+    {
+      "id": "shrimp",
+      "name": "虾",
+      "icon": "🦐",
+      "category": "seafood",
+      "price": 40,
+      "quality": "fine",
+      "description": "鲜美大虾"
+    },
+    {
+      "id": "crab",
+      "name": "螃蟹",
+      "icon": "🦀",
+      "category": "seafood",
+      "price": 60,
+      "quality": "fine",
+      "description": "肥美螃蟹"
+    },
+    {
+      "id": "apple",
+      "name": "苹果",
+      "icon": "🍎",
+      "category": "fruit",
+      "price": 5,
+      "quality": "common",
+      "description": "甜脆苹果"
+    },
+    {
+      "id": "banana",
+      "name": "香蕉",
+      "icon": "🍌",
+      "category": "fruit",
+      "price": 4,
+      "quality": "common",
+      "description": "香甜香蕉"
+    },
+    {
+      "id": "salt",
+      "name": "盐",
+      "icon": "🧂",
+      "category": "seasoning",
+      "price": 2,
+      "quality": "common",
+      "description": "食用盐"
+    },
+    {
+      "id": "sugar",
+      "name": "糖",
+      "icon": "🍬",
+      "category": "seasoning",
+      "price": 4,
+      "quality": "common",
+      "description": "白砂糖"
+    },
+    {
+      "id": "soy_sauce",
+      "name": "酱油",
+      "icon": "🍶",
+      "category": "seasoning",
+      "price": 8,
+      "quality": "common",
+      "description": "生抽酱油"
+    },
+    {
+      "id": "vinegar",
+      "name": "醋",
+      "icon": "🍶",
+      "category": "seasoning",
+      "price": 6,
+      "quality": "common",
+      "description": "米醋"
+    },
+    {
+      "id": "truffle",
+      "name": "松露",
+      "icon": "🍄",
+      "category": "special",
+      "price": 500,
+      "quality": "legendary",
+      "description": "珍贵的黑松露"
+    },
+    {
+      "id": "wagyu",
+      "name": "和牛",
+      "icon": "🥩",
+      "category": "special",
+      "price": 300,
+      "quality": "excellent",
+      "description": "顶级和牛"
+    }
+  ]
+}

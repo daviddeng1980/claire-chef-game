@@ -1,0 +1,120 @@
+{
+  "recipes": [
+    {
+      "id": "tomato_egg",
+      "name": "番茄炒蛋",
+      "difficulty": 1,
+      "category": "chinese",
+      "ingredients": [
+        { "id": "tomato", "quantity": 2, "quality": "common" },
+        { "id": "egg", "quantity": 3, "quality": "common" }
+      ],
+      "requiredSkills": ["stir-fry"],
+      "steps": [
+        { "type": "qte", "name": "打蛋", "description": "快速点击打散鸡蛋", "weight": { "taste": 0.3, "appearance": 0.2, "creativity": 0.1 } },
+        { "type": "timing", "name": "翻炒", "description": "在最佳时机翻炒", "weight": { "taste": 0.4, "appearance": 0.3, "creativity": 0.2 } },
+        { "type": "sequence", "name": "调味", "description": "按正确顺序调味", "weight": { "taste": 0.3, "appearance": 0.5, "creativity": 0.7 } }
+      ],
+      "reward": { "exp": 50, "gold": 30 },
+      "unlockLevel": 1,
+      "description": "最基础的家常菜"
+    },
+    {
+      "id": "fried_rice",
+      "name": "蛋炒饭",
+      "difficulty": 1,
+      "category": "chinese",
+      "ingredients": [
+        { "id": "egg", "quantity": 2, "quality": "common" }
+      ],
+      "requiredSkills": ["stir-fry"],
+      "steps": [
+        { "type": "qte", "name": "炒饭", "description": "快速翻炒米饭", "weight": { "taste": 0.5, "appearance": 0.3, "creativity": 0.2 } },
+        { "type": "timing", "name": "加蛋", "description": "在最佳时机加入鸡蛋", "weight": { "taste": 0.5, "appearance": 0.7, "creativity": 0.8 } }
+      ],
+      "reward": { "exp": 40, "gold": 25 },
+      "unlockLevel": 1,
+      "description": "简单美味的炒饭"
+    },
+    {
+      "id": "braised_pork",
+      "name": "红烧肉",
+      "difficulty": 2,
+      "category": "chinese",
+      "ingredients": [
+        { "id": "pork", "quantity": 1, "quality": "good" },
+        { "id": "sugar", "quantity": 2, "quality": "common" },
+        { "id": "soy_sauce", "quantity": 1, "quality": "common" }
+      ],
+      "requiredSkills": ["stir-fry", "braise"],
+      "steps": [
+        { "type": "qte", "name": "炒糖色", "description": "快速翻炒糖色", "weight": { "taste": 0.4, "appearance": 0.3, "creativity": 0.2 } },
+        { "type": "timing", "name": "下肉", "description": "在最佳时机下肉", "weight": { "taste": 0.3, "appearance": 0.2, "creativity": 0.1 } },
+        { "type": "sequence", "name": "炖煮", "description": "按正确步骤炖煮", "weight": { "taste": 0.3, "appearance": 0.5, "creativity": 0.7 } }
+      ],
+      "reward": { "exp": 100, "gold": 60 },
+      "unlockLevel": 10,
+      "description": "经典中式菜肴"
+    },
+    {
+      "id": "steamed_fish",
+      "name": "清蒸鲈鱼",
+      "difficulty": 2,
+      "category": "chinese",
+      "ingredients": [
+        { "id": "fish", "quantity": 1, "quality": "good" },
+        { "id": "soy_sauce", "quantity": 1, "quality": "common" }
+      ],
+      "requiredSkills": ["steam"],
+      "steps": [
+        { "type": "qte", "name": "处理鱼", "description": "快速处理鱼身", "weight": { "taste": 0.3, "appearance": 0.4, "creativity": 0.2 } },
+        { "type": "timing", "name": "蒸制", "description": "掌握蒸制时间", "weight": { "taste": 0.4, "appearance": 0.3, "creativity": 0.3 } },
+        { "type": "sequence", "name": "淋汁", "description": "按正确顺序淋汁", "weight": { "taste": 0.3, "appearance": 0.3, "creativity": 0.5 } }
+      ],
+      "reward": { "exp": 120, "gold": 70 },
+      "unlockLevel": 15,
+      "description": "鲜美清淡的蒸鱼"
+    },
+    {
+      "id": "kung_pao_chicken",
+      "name": "宫保鸡丁",
+      "difficulty": 3,
+      "category": "chinese",
+      "ingredients": [
+        { "id": "chicken", "quantity": 1, "quality": "good" },
+        { "id": "carrot", "quantity": 1, "quality": "common" },
+        { "id": "vinegar", "quantity": 1, "quality": "common" }
+      ],
+      "requiredSkills": ["stir-fry", "deep-fry"],
+      "steps": [
+        { "type": "qte", "name": "切丁", "description": "快速切鸡肉丁", "weight": { "taste": 0.2, "appearance": 0.3, "creativity": 0.1 } },
+        { "type": "timing", "name": "爆炒", "description": "大火爆炒", "weight": { "taste": 0.4, "appearance": 0.3, "creativity": 0.3 } },
+        { "type": "sequence", "name": "调味", "description": "宫保汁调味", "weight": { "taste": 0.4, "appearance": 0.4, "creativity": 0.6 } }
+      ],
+      "reward": { "exp": 150, "gold": 90 },
+      "unlockLevel": 25,
+      "description": "经典川菜"
+    },
+    {
+      "id": " Buddha_jumps_over_the_wall",
+      "name": "佛跳墙",
+      "difficulty": 5,
+      "category": "chinese",
+      "ingredients": [
+        { "id": "chicken", "quantity": 1, "quality": "good" },
+        { "id": "shrimp", "quantity": 2, "quality": "fine" },
+        { "id": "crab", "quantity": 1, "quality": "fine" },
+        { "id": "truffle", "quantity": 1, "quality": "legendary" }
+      ],
+      "requiredSkills": ["boil", "braise", "steam"],
+      "steps": [
+        { "type": "qte", "name": "备料", "description": "快速准备食材", "weight": { "taste": 0.2, "appearance": 0.2, "creativity": 0.1 } },
+        { "type": "timing", "name": "炖煮", "description": "长时间炖煮", "weight": { "taste": 0.4, "appearance": 0.3, "creativity": 0.3 } },
+        { "type": "sequence", "name": "调味", "description": "秘制调味", "weight": { "taste": 0.4, "appearance": 0.5, "creativity": 0.6 } }
+      ],
+      "reward": { "exp": 500, "gold": 300 },
+      "unlockLevel": 50,
+      "description": "顶级名菜"
+    }
+  ]
+}

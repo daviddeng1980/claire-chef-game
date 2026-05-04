@@ -435,7 +435,12 @@ class StreetScene extends Phaser.Scene {
     }
     
     showWorkOptions() {
-        alert('打工功能开发中...');
+        this.showBuildingMenu('打工赚钱', [
+            { text: '算术题 (5体力)', callback: () => this.scene.start('WorkScene', { workType: 'math' }) },
+            { text: '洗碗 (8体力)', callback: () => this.scene.start('WorkScene', { workType: 'dishwashing' }) },
+            { text: '端盘子 (10体力)', callback: () => this.scene.start('WorkScene', { workType: 'balancing' }) },
+            { text: '收银 (10体力)', callback: () => this.scene.start('WorkScene', { workType: 'cashier' }) }
+        ]);
     }
     
     playGame(gameType) {
