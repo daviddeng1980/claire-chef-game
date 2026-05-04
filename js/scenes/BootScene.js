@@ -90,81 +90,37 @@ class BootScene extends Phaser.Scene {
     }
     
     generateCharacterTexture() {
-        // 创建简单的角色图形
-        const graphics = this.make.graphics({ x: 0, y: 0, add: false });
-        
-        // 身体
-        graphics.fillStyle(0xFFCCAA, 1);
-        graphics.fillCircle(32, 32, 30);
-        
-        // 厨师帽
-        graphics.fillStyle(0xFFFFFF, 1);
-        graphics.fillRect(15, 5, 34, 20);
-        graphics.fillRect(10, 0, 44, 10);
-        
-        // 眼睛
-        graphics.fillStyle(0x333333, 1);
-        graphics.fillCircle(22, 30, 4);
-        graphics.fillCircle(42, 30, 4);
-        
-        // 嘴巴
-        graphics.fillStyle(0xFF6B6B, 1);
-        graphics.fillCircle(32, 40, 6);
-        
-        graphics.generateTexture('player', 64, 64);
+        // 使用 AssetGenerator 生成精美角色
+        const generator = new AssetGenerator(this);
+        generator.generateClaire();
     }
     
     generateBuildingTextures() {
-        const buildings = [
-            { key: 'home', color: 0xFFB6C1, icon: '🏠' },
-            { key: 'restaurant', color: 0xFF6B6B, icon: '🍜' },
-            { key: 'barbershop', color: 0x87CEEB, icon: '💈' },
-            { key: 'mall', color: 0x98FB98, icon: '🏬' },
-            { key: 'cinema', color: 0xDDA0DD, icon: '🎬' },
-            { key: 'cooking_school', color: 0xF0E68C, icon: '📚' }
-        ];
+        // 使用 AssetGenerator 生成精美建筑
+        const generator = new AssetGenerator(this);
         
+        const buildings = ['home', 'restaurant', 'barbershop', 'mall', 'cinema', 'cooking_school'];
         buildings.forEach(building => {
-            const graphics = this.make.graphics({ x: 0, y: 0, add: false });
-            
-            // 建筑主体
-            graphics.fillStyle(building.color, 1);
-            graphics.fillRoundedRect(0, 20, 100, 80, 10);
-            
-            // 屋顶
-            graphics.fillStyle(0x8B4513, 1);
-            graphics.fillTriangle(0, 20, 50, 0, 100, 20);
-            
-            // 门
-            graphics.fillStyle(0x654321, 1);
-            graphics.fillRect(35, 60, 30, 40);
-            
-            graphics.generateTexture(building.key, 100, 100);
+            generator.generateBuilding(building);
         });
     }
     
     generateItemTextures() {
-        const items = [
-            { key: 'tomato', color: 0xFF6347 },
-            { key: 'egg', color: 0xFFE4B5 },
-            { key: 'carrot', color: 0xFFA500 },
-            { key: 'potato', color: 0xDAA520 }
-        ];
+        // 使用 AssetGenerator 生成精美食材
+        const generator = new AssetGenerator(this);
         
+        const items = ['tomato', 'carrot', 'egg', 'meat', 'fish'];
         items.forEach(item => {
-            const graphics = this.make.graphics({ x: 0, y: 0, add: false });
-            graphics.fillStyle(item.color, 1);
-            graphics.fillCircle(32, 32, 30);
-            graphics.generateTexture(item.key, 64, 64);
+            generator.generateFoodItem(item);
         });
     }
     
     generateUITextures() {
+        // 使用 AssetGenerator 生成精美UI
+        const generator = new AssetGenerator(this);
+        
         // 按钮纹理
-        const buttonGraphics = this.make.graphics({ x: 0, y: 0, add: false });
-        buttonGraphics.fillStyle(0xFF6B6B, 1);
-        buttonGraphics.fillRoundedRect(0, 0, 200, 60, 10);
-        buttonGraphics.generateTexture('button', 200, 60);
+        generator.generateButton(200, 60);
         
         // 面板纹理
         const panelGraphics = this.make.graphics({ x: 0, y: 0, add: false });
