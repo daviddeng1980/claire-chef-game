@@ -4,7 +4,7 @@ class AssetGenerator {
         this.scene = scene;
     }
 
-    // 生成克莱尔角色
+    // 生成克莱尔角色 - 基于真实形象设计
     generateClaire() {
         const graphics = this.scene.make.graphics({ x: 0, y: 0, add: false });
         const size = 128;
@@ -12,74 +12,118 @@ class AssetGenerator {
         // 背景透明
         graphics.clear();
 
-        // 身体（厨师服）
+        // === 头部 ===
+        // 脸型（更圆润可爱）
+        graphics.fillStyle(0xFFE4C4, 1);
+        graphics.fillCircle(64, 40, 28);
+
+        // 头发（黑色，有刘海）
+        graphics.fillStyle(0x2C1810, 1);
+        graphics.fillCircle(64, 32, 30);
+        
+        // 刘海
+        graphics.fillStyle(0x2C1810, 1);
+        graphics.fillRoundedRect(40, 15, 48, 20, 8);
+        
+        // 小辫子（两侧）
+        graphics.fillStyle(0x2C1810, 1);
+        graphics.fillEllipse(35, 45, 12, 20);
+        graphics.fillEllipse(93, 45, 12, 20);
+        
+        // 辫子装饰（绿色发圈）
+        graphics.fillStyle(0x32CD32, 1);
+        graphics.fillCircle(35, 55, 4);
+        graphics.fillCircle(93, 55, 4);
+
+        // === 面部特征 ===
+        // 眼睛（大而明亮）
         graphics.fillStyle(0xFFFFFF, 1);
-        graphics.fillRoundedRect(30, 50, 68, 60, 10);
-
-        // 厨师服领子
-        graphics.fillStyle(0xFF6B6B, 1);
-        graphics.fillTriangle(45, 50, 64, 70, 83, 50);
-
-        // 纽扣
-        graphics.fillStyle(0xFF6B6B, 1);
-        graphics.fillCircle(64, 75, 4);
-        graphics.fillCircle(64, 90, 4);
-
-        // 头部
-        graphics.fillStyle(0xFFDBAC, 1);
-        graphics.fillCircle(64, 35, 25);
-
-        // 厨师帽
-        graphics.fillStyle(0xFFFFFF, 1);
-        graphics.fillRoundedRect(35, 5, 58, 25, 5);
-        graphics.fillRoundedRect(25, -5, 78, 20, 5);
-
-        // 帽子褶皱
-        graphics.lineStyle(2, 0xEEEEEE, 1);
-        graphics.lineBetween(45, 5, 45, 20);
-        graphics.lineBetween(64, 5, 64, 20);
-        graphics.lineBetween(83, 5, 83, 20);
-
-        // 眼睛
-        graphics.fillStyle(0x333333, 1);
-        graphics.fillCircle(55, 32, 4);
-        graphics.fillCircle(73, 32, 4);
-
+        graphics.fillCircle(54, 38, 8);
+        graphics.fillCircle(74, 38, 8);
+        
+        // 眼珠
+        graphics.fillStyle(0x4A3728, 1);
+        graphics.fillCircle(55, 38, 5);
+        graphics.fillCircle(75, 38, 5);
+        
         // 眼睛高光
         graphics.fillStyle(0xFFFFFF, 1);
-        graphics.fillCircle(56, 31, 1.5);
-        graphics.fillCircle(74, 31, 1.5);
+        graphics.fillCircle(57, 36, 2);
+        graphics.fillCircle(77, 36, 2);
 
-        // 腮红
-        graphics.fillStyle(0xFFB6C1, 0.6);
-        graphics.fillCircle(48, 40, 5);
-        graphics.fillCircle(80, 40, 5);
+        // 眉毛
+        graphics.lineStyle(2, 0x2C1810, 1);
+        graphics.lineBetween(48, 30, 58, 28);
+        graphics.lineBetween(70, 28, 80, 30);
 
-        // 嘴巴（微笑）
+        // 腮红（粉红色）
+        graphics.fillStyle(0xFFB6C1, 0.7);
+        graphics.fillCircle(46, 48, 6);
+        graphics.fillCircle(82, 48, 6);
+
+        // 嘴巴（开心的微笑）
         graphics.lineStyle(2, 0xFF6B6B, 1);
         graphics.beginPath();
-        graphics.arc(64, 42, 6, 0.1 * Math.PI, 0.9 * Math.PI);
+        graphics.arc(64, 50, 8, 0.1 * Math.PI, 0.9 * Math.PI);
         graphics.strokePath();
-
-        // 手臂
+        
+        // 牙齿
         graphics.fillStyle(0xFFFFFF, 1);
-        graphics.fillRoundedRect(20, 60, 15, 40, 7);
-        graphics.fillRoundedRect(93, 60, 15, 40, 7);
+        graphics.fillRect(60, 54, 8, 4);
+
+        // === 身体 ===
+        // 厨师服（白色）
+        graphics.fillStyle(0xFFFFFF, 1);
+        graphics.fillRoundedRect(34, 65, 60, 50, 10);
+
+        // 绿色领子（和衣服上的绿色条纹呼应）
+        graphics.fillStyle(0x32CD32, 1);
+        graphics.fillTriangle(44, 65, 64, 80, 84, 65);
+
+        // 衣服上的绿色条纹（袖子）
+        graphics.fillStyle(0x32CD32, 1);
+        graphics.fillRoundedRect(28, 70, 12, 35, 4);
+        graphics.fillRoundedRect(88, 70, 12, 35, 4);
+
+        // 纽扣
+        graphics.fillStyle(0x32CD32, 1);
+        graphics.fillCircle(64, 88, 4);
+        graphics.fillCircle(64, 102, 4);
+
+        // === 手臂 ===
+        // 手臂（肤色）
+        graphics.fillStyle(0xFFE4C4, 1);
+        graphics.fillRoundedRect(24, 75, 12, 30, 4);
+        graphics.fillRoundedRect(92, 75, 12, 30, 4);
 
         // 手
-        graphics.fillStyle(0xFFDBAC, 1);
-        graphics.fillCircle(27, 105, 8);
-        graphics.fillCircle(100, 105, 8);
+        graphics.fillStyle(0xFFE4C4, 1);
+        graphics.fillCircle(30, 108, 7);
+        graphics.fillCircle(98, 108, 7);
 
-        // 腿
+        // === 腿 ===
+        // 裤子（深色）
         graphics.fillStyle(0x333333, 1);
-        graphics.fillRoundedRect(45, 105, 15, 20, 5);
-        graphics.fillRoundedRect(68, 105, 15, 20, 5);
+        graphics.fillRoundedRect(44, 110, 16, 15, 3);
+        graphics.fillRoundedRect(68, 110, 16, 15, 3);
 
-        // 脚
+        // === 脚 ===
+        // 鞋子（棕色）
         graphics.fillStyle(0x8B4513, 1);
-        graphics.fillRoundedRect(40, 120, 20, 8, 4);
-        graphics.fillRoundedRect(68, 120, 20, 8, 4);
+        graphics.fillRoundedRect(38, 122, 22, 8, 4);
+        graphics.fillRoundedRect(68, 122, 22, 8, 4);
+
+        // === 厨师帽 ===
+        // 帽子主体
+        graphics.fillStyle(0xFFFFFF, 1);
+        graphics.fillRoundedRect(44, 2, 40, 18, 5);
+        graphics.fillRoundedRect(38, -8, 52, 15, 5);
+        
+        // 帽子褶皱
+        graphics.lineStyle(1, 0xEEEEEE, 1);
+        graphics.lineBetween(52, 2, 52, 15);
+        graphics.lineBetween(64, 2, 64, 15);
+        graphics.lineBetween(76, 2, 76, 15);
 
         graphics.generateTexture('claire', size, size);
         return 'claire';
