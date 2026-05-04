@@ -37,7 +37,9 @@ function initGame() {
             ShopScene,
             CompetitionScene,
             MiniGameScene,
-            WorkScene
+            WorkScene,
+            SkillScene,
+            InventoryScene
         ]
     };
     

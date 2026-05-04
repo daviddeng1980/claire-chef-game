@@ -262,7 +262,7 @@ class StreetScene extends Phaser.Scene {
     
     showCookingSchoolMenu() {
         this.showBuildingMenu('烹饪学校', [
-            { text: '学习技能', callback: () => this.learnSkills() },
+            { text: '学习技能', callback: () => this.scene.start('SkillScene') },
             { text: '参加考核', callback: () => this.takeExam() }
         ]);
     }
@@ -327,7 +327,7 @@ class StreetScene extends Phaser.Scene {
                 // 已经在主页
                 break;
             case '背包':
-                this.showInventory();
+                this.scene.start('InventoryScene');
                 break;
             case '任务':
                 this.showQuests();
