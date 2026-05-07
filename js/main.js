@@ -78,6 +78,9 @@ function initGameSystems() {
         if (saveData.quests) {
             gameQuest.completedQuests = saveData.quests.completed || [];
         }
+    } else {
+        // 新玩家初始化物品
+        initNewPlayerItems();
     }
     
     // 将系统挂载到全局，方便场景访问
@@ -85,6 +88,15 @@ function initGameSystems() {
     window.gameInventory = gameInventory;
     window.gameCooking = gameCooking;
     window.gameQuest = gameQuest;
+}
+
+// 新玩家初始物品
+function initNewPlayerItems() {
+    // 给新玩家一些基础食材
+    gameInventory.addItem('tomato', 5, 'common');
+    gameInventory.addItem('egg', 5, 'common');
+    gameInventory.addItem('carrot', 3, 'common');
+    gameInventory.addItem('salt', 2, 'common');
 }
 
 // 保存游戏
