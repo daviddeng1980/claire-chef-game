@@ -8,7 +8,10 @@ const CONSTANTS = {
         COOKING: 'CookingScene',
         SHOP: 'ShopScene',
         COMPETITION: 'CompetitionScene',
-        MINIGAME: 'MiniGameScene'
+        MINIGAME: 'MiniGameScene',
+        KITCHEN: 'KitchenScene',
+        ACHIEVEMENT: 'AchievementScene',
+        RECIPE: 'RecipeScene'
     },
     
     // 事件名

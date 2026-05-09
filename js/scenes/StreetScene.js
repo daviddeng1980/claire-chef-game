@@ -141,11 +141,11 @@ class StreetScene extends Phaser.Scene {
         
         // 导航按钮
         const navItems = [
-            { icon: '🏠', text: '主页', x: 100 },
-            { icon: '🎒', text: '背包', x: 250 },
-            { icon: '📋', text: '任务', x: 400 },
-            { icon: '👤', text: '角色', x: 550 },
-            { icon: '⚙️', text: '设置', x: 650 }
+            { icon: '🏠', text: '主页', x: 70 },
+            { icon: '🎒', text: '背包', x: 180 },
+            { icon: '🏆', text: '成就', x: 290 },
+            { icon: '👤', text: '角色', x: 400 },
+            { icon: '⚙️', text: '设置', x: 510 }
         ];
         
         navItems.forEach(item => {
@@ -198,7 +198,8 @@ class StreetScene extends Phaser.Scene {
     showHomeMenu() {
         this.showBuildingMenu('家', [
             { text: '休息恢复', callback: () => this.restAtHome() },
-            { text: '查看菜谱', callback: () => this.showRecipes() },
+            { text: '查看菜谱', callback: () => this.scene.start('RecipeScene') },
+            { text: '我的厨房', callback: () => this.scene.start('KitchenScene') },
             { text: '烹饪练习', callback: () => this.scene.start(CONSTANTS.SCENES.COOKING) }
         ]);
     }
@@ -293,8 +294,8 @@ class StreetScene extends Phaser.Scene {
             case '背包':
                 this.scene.start('InventoryScene');
                 break;
-            case '任务':
-                this.showQuests();
+            case '成就':
+                this.scene.start('AchievementScene');
                 break;
             case '角色':
                 this.scene.start('CharacterScene');

@@ -6,6 +6,9 @@ let gamePlayer;
 let gameInventory;
 let gameCooking;
 let gameQuest;
+let gameKitchen;
+let gameAchievement;
+let gameDailyReward;
 
 // 初始化游戏
 function initGame() {
@@ -40,7 +43,10 @@ function initGame() {
             WorkScene,
             SkillScene,
             InventoryScene,
-            CharacterScene
+            CharacterScene,
+            KitchenScene,
+            AchievementScene,
+            RecipeScene
         ]
     };
     
@@ -65,6 +71,15 @@ function initGameSystems() {
     // 创建任务系统
     gameQuest = new QuestSystem(gamePlayer);
     
+    // 创建厨房系统
+    gameKitchen = new KitchenSystem(gamePlayer);
+    
+    // 创建成就系统
+    gameAchievement = new AchievementSystem();
+    
+    // 创建每日签到系统
+    gameDailyReward = new DailyRewardSystem();
+    
     // 尝试加载存档
     const saveData = SaveSystem.load();
     if (saveData) {
@@ -78,6 +93,9 @@ function initGameSystems() {
         if (saveData.quests) {
             gameQuest.completedQuests = saveData.quests.completed || [];
         }
+        if (saveData.kitchen) {
+            gameKitchen.load(saveData.kitchen);
+        }
     } else {
         // 新玩家初始化物品
         initNewPlayerItems();
@@ -88,6 +106,9 @@ function initGameSystems() {
     window.gameInventory = gameInventory;
     window.gameCooking = gameCooking;
     window.gameQuest = gameQuest;
+    window.gameKitchen = gameKitchen;
+    window.gameAchievement = gameAchievement;
+    window.gameDailyReward = gameDailyReward;
 }
 
 // 新玩家初始物品
@@ -109,6 +130,7 @@ function saveGame() {
         quests: {
             completed: gameQuest.getCompletedQuests()
         },
+        kitchen: gameKitchen.save(),
         timestamp: Date.now()
     };
     

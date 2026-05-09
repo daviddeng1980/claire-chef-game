@@ -19,28 +19,28 @@ class MenuScene extends Phaser.Scene {
         this.createDecorations();
         
         // 游戏标题
-        this.add.text(width / 2, 250, '克莱尔是个大厨师', {
-            fontSize: '72px',
+        this.add.text(width / 2, 200, '克莱尔是个大厨师', {
+            fontSize: '60px',
             fontFamily: 'Microsoft YaHei',
             color: '#FF6B6B',
             fontStyle: 'bold'
         }).setOrigin(0.5);
         
         // 副标题
-        this.add.text(width / 2, 350, '🦞 养成类烹饪游戏', {
-            fontSize: '36px',
+        this.add.text(width / 2, 280, '🦞 养成类烹饪游戏', {
+            fontSize: '32px',
             fontFamily: 'Microsoft YaHei',
             color: '#666666'
         }).setOrigin(0.5);
         
         // 角色展示
-        const playerSprite = this.add.image(width / 2, 550, 'player');
+        const playerSprite = this.add.image(width / 2, 450, 'player');
         playerSprite.setScale(2);
         
         // 添加简单的浮动动画
         this.tweens.add({
             targets: playerSprite,
-            y: 560,
+            y: 460,
             duration: 1500,
             yoyo: true,
             repeat: -1,
@@ -50,8 +50,11 @@ class MenuScene extends Phaser.Scene {
         // 创建菜单按钮
         this.createMenuButtons();
         
+        // 检查每日签到
+        this.checkDailyReward();
+        
         // 版本信息
-        this.add.text(width / 2, height - 50, 'v1.0.0 - 龙虾工作室', {
+        this.add.text(width / 2, height - 50, 'v1.4.0 - 龙虾工作室', {
             fontSize: '20px',
             fontFamily: 'Microsoft YaHei',
             color: '#999999'
@@ -61,6 +64,90 @@ class MenuScene extends Phaser.Scene {
         if (this.loadSave) {
             this.loadGameData();
         }
+    }
+    
+    checkDailyReward() {
+        if (window.gameDailyReward && window.gameDailyReward.canClaim()) {
+            this.showDailyRewardButton();
+        }
+    }
+    
+    showDailyRewardButton() {
+        const reward = window.gameDailyReward.getTodayReward();
+        const consecutiveDays = window.gameDailyReward.getConsecutiveDays();
+        
+        // 签到按钮背景
+        const btnBg = this.add.graphics();
+        btnBg.fillStyle(0xFFE66D, 1);
+        btnBg.fillRoundedRect(250, 380, 250, 80, 15);
+        btnBg.setInteractive(new Phaser.Geom.Rectangle(250, 380, 250, 80), Phaser.Geom.Rectangle.Contains);
+        
+        const btnText = this.add.text(375, 420, `🎁 每日签到 (第${consecutiveDays + 1}天)`, {
+            fontSize: '24px',
+            fontFamily: 'Microsoft YaHei',
+            color: '#333333',
+            fontStyle: 'bold'
+        }).setOrigin(0.5);
+        
+        btnBg.on('pointerdown', () => {
+            this.claimDailyReward();
+        });
+        btnText.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
+            this.claimDailyReward();
+        });
+    }
+    
+    claimDailyReward() {
+        if (!window.gamePlayer) return;
+        
+        const result = window.gameDailyReward.claim(window.gamePlayer);
+        
+        // 显示奖励弹窗
+        const panel = this.add.graphics();
+        panel.fillStyle(0xFFFFFF, 1);
+        panel.fillRoundedRect(175, 500, 400, 300, 20);
+        panel.setScrollFactor(0);
+        
+        const title = this.add.text(375, 560, '🎉 签到成功!', {
+            fontSize: '36px',
+            fontFamily: 'Microsoft YaHei',
+            color: '#FF6B6B',
+            fontStyle: 'bold'
+        }).setOrigin(0.5).setScrollFactor(0);
+        
+        const rewardText = this.add.text(375, 640, `连续签到第${result.day}天\n\n+${result.gold}金币\n+${result.exp}经验`, {
+            fontSize: '28px',
+            fontFamily: 'Microsoft YaHei',
+            color: '#333333',
+            align: 'center'
+        }).setOrigin(0.5).setScrollFactor(0);
+        
+        const closeBtn = this.add.graphics();
+        closeBtn.fillStyle(0xFF6B6B, 1);
+        closeBtn.fillRoundedRect(300, 720, 150, 50, 10);
+        closeBtn.setScrollFactor(0);
+        
+        const closeText = this.add.text(375, 745, '确定', {
+            fontSize: '24px',
+            fontFamily: 'Microsoft YaHei',
+            color: '#FFFFFF'
+        }).setOrigin(0.5).setScrollFactor(0);
+        
+        closeBtn.setInteractive(new Phaser.Geom.Rectangle(300, 720, 150, 50), Phaser.Geom.Rectangle.Contains);
+        closeBtn.on('pointerdown', () => {
+            panel.destroy();
+            title.destroy();
+            rewardText.destroy();
+            closeBtn.destroy();
+            closeText.destroy();
+        });
+        closeText.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
+            panel.destroy();
+            title.destroy();
+            rewardText.destroy();
+            closeBtn.destroy();
+            closeText.destroy();
+        });
     }
     
     createDecorations() {
