@@ -55,7 +55,7 @@ class Dialog {
         buttons.forEach((btn, index) => {
             const x = startX + index * buttonSpacing;
             
-            const button = this.scene.add.image(x, buttonY, 'button')
+            const button = this.scene.add.image(x, buttonY, 'button_new')
                 .setInteractive({ useHandCursor: true });
             
             const buttonText = this.scene.add.text(x, buttonY, btn.text, {

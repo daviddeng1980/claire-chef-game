@@ -247,7 +247,7 @@ class StreetScene extends Phaser.Scene {
         const buttons = [];
         
         options.forEach(option => {
-            const btn = this.add.image(375, currentY, 'button')
+            const btn = this.add.image(375, currentY, 'button_new')
                 .setInteractive({ useHandCursor: true });
             
             const btnText = this.add.text(375, currentY, option.text, {
@@ -268,7 +268,7 @@ class StreetScene extends Phaser.Scene {
         });
         
         // 关闭按钮
-        const closeBtn = this.add.image(375, currentY + 20, 'button')
+        const closeBtn = this.add.image(375, currentY + 20, 'button_new')
             .setInteractive({ useHandCursor: true });
         
         const closeText = this.add.text(375, currentY + 20, '离开', {
@@ -317,7 +317,7 @@ class StreetScene extends Phaser.Scene {
             fontStyle: 'bold'
         }).setOrigin(0.5);
         
-        const closeBtn = this.add.image(375, 900, 'button')
+        const closeBtn = this.add.image(375, 900, 'button_new')
             .setInteractive({ useHandCursor: true });
         
         const closeText = this.add.text(375, 900, '关闭', {
@@ -345,7 +345,7 @@ class StreetScene extends Phaser.Scene {
             fontStyle: 'bold'
         }).setOrigin(0.5);
         
-        const closeBtn = this.add.image(375, 900, 'button')
+        const closeBtn = this.add.image(375, 900, 'button_new')
             .setInteractive({ useHandCursor: true });
         
         const closeText = this.add.text(375, 900, '关闭', {
@@ -373,7 +373,7 @@ class StreetScene extends Phaser.Scene {
             fontStyle: 'bold'
         }).setOrigin(0.5);
         
-        const closeBtn = this.add.image(375, 900, 'button')
+        const closeBtn = this.add.image(375, 900, 'button_new')
             .setInteractive({ useHandCursor: true });
         
         const closeText = this.add.text(375, 900, '关闭', {
@@ -402,9 +402,6 @@ class StreetScene extends Phaser.Scene {
     showWorkOptions() {
         this.showBuildingMenu('打工赚钱', [
             { text: '算术题 (5体力)', callback: () => this.scene.start('WorkScene', { workType: 'math' }) },
-            { text: '洗碗 (8体力)', callback: () => this.scene.start('WorkScene', { workType: 'dishwashing' }) },
-            { text: '端盘子 (10体力)', callback: () => this.scene.start('WorkScene', { workType: 'balancing' }) },
-            { text: '收银 (10体力)', callback: () => this.scene.start('WorkScene', { workType: 'cashier' }) }
         ]);
     }
     

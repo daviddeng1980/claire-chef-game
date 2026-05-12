@@ -92,7 +92,7 @@ class BootScene extends Phaser.Scene {
         });
         
         // 生成UI
-        generator.generateButton(200, 60);
+        generator.generateButton(280, 80);
         
         // 生成面板纹理
         const panelGraphics = this.make.graphics({ x: 0, y: 0, add: false });

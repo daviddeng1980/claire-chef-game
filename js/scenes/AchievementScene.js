@@ -47,7 +47,7 @@ class AchievementScene extends Phaser.Scene {
         // 设置场景高度以容纳所有成就
         const totalHeight = startY + achievements.length * itemHeight + 100;
         if (totalHeight > 1334) {
-            this.cameras.main.setScrollY(0);
+            this.cameras.main.scrollY = 0;
             // 让画面可以滚动
             this.input.on('wheel', (pointer, gameObjects, deltaX, deltaY) => {
                 this.cameras.main.scrollY -= deltaY;

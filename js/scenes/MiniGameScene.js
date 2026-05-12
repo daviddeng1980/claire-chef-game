@@ -181,10 +181,10 @@ class MiniGameScene extends Phaser.Scene {
         }
         
         // 返回按钮
-        const backBtn = this.add.image(375, 1000, 'button')
+        const replayBtn = this.add.image(250, 1000, 'button_new')            .setInteractive({ useHandCursor: true });        const replayText = this.add.text(250, 1000, '再玩一次', {            fontSize: '24px',            fontFamily: 'Microsoft YaHei',            color: '#FFFFFF'        }).setOrigin(0.5);        const backBtn = this.add.image(500, 1000, 'button_new')
             .setInteractive({ useHandCursor: true });
         
-        const backText = this.add.text(375, 1000, '返回街区', {
+        const backText = this.add.text(500, 1000, '返回街区', {
             fontSize: '28px',
             fontFamily: 'Microsoft YaHei',
             color: '#FFFFFF'
@@ -192,6 +192,10 @@ class MiniGameScene extends Phaser.Scene {
         
         backBtn.on('pointerdown', () => {
             this.scene.start(CONSTANTS.SCENES.STREET);
+        });
+        
+        replayBtn.on('pointerdown', () => {
+            this.scene.restart();
         });
     }
     
@@ -371,10 +375,10 @@ class MiniGameScene extends Phaser.Scene {
         }
         
         // 返回按钮
-        const backBtn = this.add.image(375, 1150, 'button')
+        const backBtn = this.add.image(500, 1150, 'button_new')
             .setInteractive({ useHandCursor: true });
         
-        const backText = this.add.text(375, 1150, '返回街区', {
+        const backText = this.add.text(500, 1150, '返回街区', {
             fontSize: '28px',
             fontFamily: 'Microsoft YaHei',
             color: '#FFFFFF'
@@ -382,6 +386,20 @@ class MiniGameScene extends Phaser.Scene {
         
         backBtn.on('pointerdown', () => {
             this.scene.start(CONSTANTS.SCENES.STREET);
+        });
+        
+        // 再玩一次按钮
+        const replayBtn = this.add.image(250, 1150, 'button_new')
+            .setInteractive({ useHandCursor: true });
+        
+        const replayText = this.add.text(250, 1150, '再玩一次', {
+            fontSize: '24px',
+            fontFamily: 'Microsoft YaHei',
+            color: '#FFFFFF'
+        }).setOrigin(0.5);
+        
+        replayBtn.on('pointerdown', () => {
+            this.scene.restart();
         });
     }
     

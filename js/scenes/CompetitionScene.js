@@ -258,7 +258,7 @@ class CompetitionScene extends Phaser.Scene {
         }
         
         // 确定按钮
-        const confirmBtn = this.add.image(375, 900, 'button')
+        const confirmBtn = this.add.image(375, 900, 'button_new')
             .setInteractive({ useHandCursor: true });
         
         const confirmText = this.add.text(375, 900, '确定', {

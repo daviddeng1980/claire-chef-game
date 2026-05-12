@@ -92,7 +92,7 @@ class CookingScene extends Phaser.Scene {
         const cookingArea = this.add.rectangle(375, 500, 500, 300, 0xFFFFFF, 0.5);
 
         // 选择菜谱按钮
-        const selectRecipeBtn = this.add.image(375, 400, 'button')
+        const selectRecipeBtn = this.add.image(375, 400, 'button_new')
             .setInteractive({ useHandCursor: true });
 
         this.add.text(375, 400, '选择菜谱', {
@@ -108,7 +108,7 @@ class CookingScene extends Phaser.Scene {
         });
 
         // 开始烹饪按钮（初始禁用）
-        this.startCookBtn = this.add.image(375, 500, 'button')
+        this.startCookBtn = this.add.image(375, 500, 'button_new')
             .setInteractive({ useHandCursor: true })
             .setAlpha(0.5);
 
@@ -169,7 +169,7 @@ class CookingScene extends Phaser.Scene {
         const buttons = [];
 
         availableRecipes.forEach(recipe => {
-            const btn = this.add.image(375, currentY, 'button')
+            const btn = this.add.image(375, currentY, 'button_new')
                 .setInteractive({ useHandCursor: true });
 
             const btnText = this.add.text(375, currentY, `${recipe.name} ${'⭐'.repeat(recipe.difficulty)}`, {
@@ -203,7 +203,7 @@ class CookingScene extends Phaser.Scene {
         });
 
         // 关闭按钮
-        const closeBtn = this.add.image(375, currentY + 20, 'button')
+        const closeBtn = this.add.image(375, currentY + 20, 'button_new')
             .setInteractive({ useHandCursor: true });
 
         const closeText = this.add.text(375, currentY + 20, '取消', {
@@ -386,7 +386,7 @@ class CookingScene extends Phaser.Scene {
         const sweetSpot = this.add.circle(0, 50, 30, 0x00AA00, 0.3);
 
         // 点击按钮
-        const clickBtn = this.add.image(0, 150, 'button')
+        const clickBtn = this.add.image(0, 150, 'button_new')
             .setInteractive({ useHandCursor: true });
 
         const clickText = this.add.text(0, 150, '点击!', {
@@ -585,7 +585,7 @@ class CookingScene extends Phaser.Scene {
         }
 
         // 确定按钮
-        const confirmBtn = this.add.image(375, 850, 'button')
+        const confirmBtn = this.add.image(375, 850, 'button_new')
             .setInteractive({ useHandCursor: true });
 
         const confirmText = this.add.text(375, 850, '确定', {

@@ -197,7 +197,7 @@ class MenuScene extends Phaser.Scene {
     }
     
     createButton(x, y, text, callback) {
-        const button = this.add.image(x, y, 'button')
+        const button = this.add.image(x, y, 'button_new')
             .setInteractive({ useHandCursor: true });
         
         const buttonText = this.add.text(x, y, text, {
